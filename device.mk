@@ -22,20 +22,24 @@
 # definition file).
 #
 
-# Inherit from sony sm8250-common
-$(call inherit-product, device/sony/sm8250-common/edo.mk)
+# Inherit from sony sm8150-common
+$(call inherit-product, device/sony/sm8150-common/kumano.mk)
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 2560
-TARGET_SCREEN_WIDTH := 1440
+TARGET_SCREEN_HEIGHT := 2520
+TARGET_SCREEN_WIDTH := 1080
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.manager@1.0
+
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
 
 # NFC
 PRODUCT_COPY_FILES += \
@@ -43,4 +47,4 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf
 
 # Inherit from vendor blobs
-$(call inherit-product, vendor/sony/pdx203/pdx203-vendor.mk)
+$(call inherit-product, vendor/sony/bahamut/bahamut-vendor.mk)

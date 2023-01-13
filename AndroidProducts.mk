@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_pdx203.mk
+    $(LOCAL_DIR)/lineage_bahamut.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_pdx203-user \
-    lineage_pdx203-userdebug \
-    lineage_pdx203-eng
+    lineage_bahamut-user \
+    lineage_bahamut-userdebug \
+    lineage_bahamut-eng
